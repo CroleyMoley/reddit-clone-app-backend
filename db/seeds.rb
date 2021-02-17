@@ -6,3 +6,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create(email: 'email@email.com', username: 'tester', password: 'password')
+Article.create(subreddit: 'testsub', title: 'testtitle', url: 'testurl.com', viewcount: '8', thumbnail: 'testthumb')
