@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subreddit: MyString
+  title: MyText
+  url: MyString
+  viewcount: 1
+  thumbnail: MyString
+  r: MyString
+
+two:
+  subreddit: MyString
+  title: MyText
+  url: MyString
+  viewcount: 1
+  thumbnail: MyString
+  r: MyString
