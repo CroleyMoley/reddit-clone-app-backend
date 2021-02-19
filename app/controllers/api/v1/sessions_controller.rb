@@ -14,6 +14,17 @@ module Api
                 end
             end
 
+            def get_current_user
+                if logged_in?
+                    render json: current_user 
+                else
+                    render json: {
+                        error: "No one was logged in"
+                    }
+                end
+            end
+        
+
         
         end
     end
