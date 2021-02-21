@@ -23,6 +23,15 @@ module Api
                     }
                 end
             end
+
+
+            def destroy
+                session.clear
+                render json: {
+                    notice: "Logged Out"
+                }
+            end
+
         
 
         
