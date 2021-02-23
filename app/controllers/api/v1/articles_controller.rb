@@ -5,13 +5,10 @@ module Api
 
             def index
 
-                @reddit_data = Article.order('created_at DESC')
+                @articles = Article.all
 
-                render json: {
-                status: 200,
-                message: "success",
-                data: @reddit_data
-                }
+                render json: ArticleSerializer.new(@articles)
+
 
             end
         end

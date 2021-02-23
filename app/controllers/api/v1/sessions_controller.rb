@@ -16,11 +16,7 @@ module Api
 
             def get_current_user
                 if logged_in?
-                    render json: UserSerializer.new(current_user) 
-                else
-                    render json: {
-                        error: "No one was logged in"
-                    }
+                    render json: UserSerializer.new(current_user)        
                 end
             end
 
