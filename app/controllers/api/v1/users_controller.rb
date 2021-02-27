@@ -7,17 +7,16 @@ class Api::V1::UsersController < ApplicationController
     
 
     def create
+        #byebug
         @user = User.new(user_params)
         if @user.save
-            render json: {
-                message: "Login Success",
-                data: user
-            }
+            session[:user_id] = @user.id
+            render json: UserSerializer.new(@user)
         else
-            render json: {
-                message: "Login Failed",
-                data: "Please Try Again"
+            resp = {
+                error: @user.errors.full_messages.to_sentence
             }
+            render json: resp, status: :unprocessable_entry
         end
     end
 
