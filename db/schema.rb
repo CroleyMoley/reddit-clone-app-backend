@@ -10,18 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_27_000929) do
+ActiveRecord::Schema.define(version: 2021_02_28_203610) do
 
   create_table "articles", force: :cascade do |t|
     t.string "subreddit"
     t.text "title"
     t.string "url"
-    t.integer "viewcount"
-    t.string "thumbnail"
-    t.string "r"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.text "content"
   end
 
   create_table "users", force: :cascade do |t|
