@@ -17,7 +17,7 @@ module Api
                     render json: @article, status: :created
                 else
                     error_resp = {
-                      error: @trip.errors.full_messages.to_sentence
+                      error: @article.errors.full_messages.to_sentence
                     }
                     render json: error_resp, status: :unprocessable_entity
                   end
@@ -27,7 +27,7 @@ module Api
             private 
 
             def article_params
-                params.require(:article).permit(:subreddit, :title, :content)
+                params.require(:article).permit(:subreddit, :title, :url, :content, :user_id)
             end
 
 
