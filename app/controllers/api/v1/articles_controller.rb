@@ -14,7 +14,7 @@ module Api
                 @article = Article.new(article_params)
 
                 if @article.save
-                    render json: @article, status: :created
+                    render json: ArticleSerializer.new(@article), status: :created
                 else
                     error_resp = {
                       error: @article.errors.full_messages.to_sentence
